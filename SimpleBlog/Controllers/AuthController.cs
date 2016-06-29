@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using SimpleBlog.ViewModels;
 
 namespace SimpleBlog.Controllers
 {
@@ -12,6 +13,12 @@ namespace SimpleBlog.Controllers
         public ActionResult Login()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(AuthLogin form)
+        {
+            return Content("hi" + form.UserName);
         }
     }
 }

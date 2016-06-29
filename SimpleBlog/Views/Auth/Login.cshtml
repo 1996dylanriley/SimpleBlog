@@ -1,10 +1,14 @@
-﻿@{ 
+﻿@model SimpleBlog.ViewModels.AuthLogin
+@{ 
     ViewBag.Title = "Login";
 }
-    <div>
-        <h3>This is the login page!</h3>
-    </div>
-@section Scripts {
-    <script>alert("Hi!");</script>
-    }
+@using (Html.BeginForm())
+{
 
+}
+ <!-- This code here was replaced by the helper methods above.
+      <form method="post">
+       <input type="text" name="Username" />
+       <input type="password" name="Password" />
+       <input type="submit" value="login" />
+   </form>  -->
