@@ -1,0 +1,13 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+      ViewBag.Title = "Posts";
+
+}
+
+
+    <div>
+        <h1>Index</h1>
+        <p> <a href="@Url.RouteUrl("Login")">Click here for login via < a ></a></p>
+        <p> @Html.RouteLink("click Here", "Login") </p>
+    </div>
+
