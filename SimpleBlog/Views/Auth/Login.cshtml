@@ -6,13 +6,13 @@
 {
     @Html.ValidationSummary() // this here is a really cool feature that return a deafault message if a feild isn't valid.
                             <div>
-                                @Html.LabelFor(x => x.UserName)
-                                @Html.EditorFor(x => x.UserName) <!-- As this is a strongly typed view I can use the -->
+                                @Html.LabelFor(x => x.Username)
+                                @Html.EditorFor(x => x.Username) <!-- As this is a strongly typed view I can use the -->
                                 <!--name username to associate it with the property by the same name in the view model-->
                             </div>
                             <div>
                                 @Html.LabelFor(x => x.Password)
-                               <!--- <label>@:Model.Password</label> ->
+                               <!--- <label>(at sign goes here)Model.Password</label> -->
 
                                 @Html.EditorFor(x => x.Password)
                             </div>

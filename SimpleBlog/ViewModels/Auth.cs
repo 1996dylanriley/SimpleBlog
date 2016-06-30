@@ -5,7 +5,7 @@ namespace SimpleBlog.ViewModels
     public class AuthLogin
     {
         [Required] // this is another annotation
-        public string UserName { get; set; }
+        public string Username { get; set; }
 
         
         [Required, DataType(DataType.Password)] // this here is how we tell the view that the html.EditorFor contains password data. This is called

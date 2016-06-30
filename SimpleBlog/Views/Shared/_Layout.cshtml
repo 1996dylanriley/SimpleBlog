@@ -11,8 +11,23 @@
 </head>
 <body>
     <div>
-        <header><h1><a href="@Url.RouteUrl("home")">Simple blog</a></h1></header>
-        <a href="@Url.RouteUrl("login")">login</a>
+        <header>
+            <h1><a href="@Url.RouteUrl("home")">Simple blog</a></h1>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <p> Welcome Back @User.Identity.Name</p>
+                <a href="@Url.RouteUrl("logout")">Logout</a>
+                if(User.IsInRole("admin"))
+                {
+                    <a href="@Url.Action("index", "Posts", new { area = "admin"})">View posts in admin</a> <!-- the reason i put new {area = "admin"} is because the overload requires an object-->
+               }
+            }
+            else
+            {
+            <a href="@Url.RouteUrl("login")">login</a>
+            }
+           
+        </header>
         @RenderBody()
     
     </div>
