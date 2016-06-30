@@ -1,14 +1,30 @@
 ﻿@model SimpleBlog.ViewModels.AuthLogin
-@{ 
-    ViewBag.Title = "Login";
+@{
+    ViewBag.Title = "Login"; //this using statement above^ shows that this view is strongly typed meaning its associated with a model.
 }
 @using (Html.BeginForm())
 {
+    @Html.ValidationSummary() // this here is a really cool feature that return a deafault message if a feild isn't valid.
+                            <div>
+                                @Html.LabelFor(x => x.UserName)
+                                @Html.EditorFor(x => x.UserName) <!-- As this is a strongly typed view I can use the -->
+                                <!--name username to associate it with the property by the same name in the view model-->
+                            </div>
+                            <div>
+                                @Html.LabelFor(x => x.Password)
+                               <!--- <label>@:Model.Password</label> ->
+
+                                @Html.EditorFor(x => x.Password)
+                            </div>
+
+                            <div>
+                                <input type="submit" value="login" />
+                            </div>
 
 }
- <!-- This code here was replaced by the helper methods above.
-      <form method="post">
-       <input type="text" name="Username" />
-       <input type="password" name="Password" />
-       <input type="submit" value="login" />
-   </form>  -->
+<!-- This code here was replaced by the helper methods above.
+     <form method="post">
+      <input type="text" name="Username" />
+      <input type="password" name="Password" />
+      <input type="submit" value="login" />
+  </form>  -->
