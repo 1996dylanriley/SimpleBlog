@@ -6,7 +6,7 @@ using System.Web;
 namespace SimpleBlog.Infrastructure
 {
     public class RoleProvider : System.Web.Security.RoleProvider
-
+        //
     {
         public override string ApplicationName
         {
